@@ -26,7 +26,8 @@ SECRET_KEY = 'django-insecure-*in+$a=j(!h1_!^v3z#sw@(ja&b_bn)c4t)rl^xevlr58b=m39
 DEBUG = True
 
 ALLOWED_HOSTS = [
-    'giraffe.ml'
+    'giraffe.ml',
+    'localhost'
 ]
 
 
@@ -79,7 +80,7 @@ WSGI_APPLICATION = 'seegewerk.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': '/home/pi/seegewerk/db.sqlite3',
+        'NAME': '/Users/Friedrich/Development/seegewerk/db.sqlite3',
     }
 }
 
