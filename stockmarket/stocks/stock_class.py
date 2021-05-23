@@ -16,6 +16,7 @@ class Stock:
         self._symbol_data = None
 
         self.logger = Logger(self._symbol + ' Logger')
+        self.logger.setLevel('INFO')
 
     def load(self):
         if self._symbol_data:
