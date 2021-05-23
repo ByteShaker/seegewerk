@@ -12,14 +12,14 @@ yf.pdr_override()
 class Stock:
     def __init__(self, symbol):
         self._symbol = symbol
-        self._file_path = './data/' + self._symbol + '.pkl'
+        self._file_path = '../data/' + self._symbol + '.pkl'
         self._symbol_data = None
 
     def load(self):
         if self._symbol_data:
             Logger.info('Symbol data is not empty.')
-        elif path.isfile(self.file_path):
-            self._symbol_data = pd.read_pickle(self.file_path)
+        elif path.isfile(self._file_path):
+            self._symbol_data = pd.read_pickle(self._file_path)
             Logger.info('Symbol data loaded from pickle file: ' + self._file_path)
         else:
             Logger.error('Symbol data does not exist: ' + self.file_path)
