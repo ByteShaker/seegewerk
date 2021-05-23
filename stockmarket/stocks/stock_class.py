@@ -1,5 +1,5 @@
 from os import path
-from logging import getLogger, INFO
+from logging import getLogger, StreamHandler, Formatter, DEBUG
 
 import pandas as pd
 from datetime import date, timedelta
@@ -16,7 +16,20 @@ class Stock:
         self._symbol_data = None
 
         self.logger = getLogger(self._symbol + ' Logger')
-        self.logger.setLevel(INFO)
+        self.logger.setLevel(DEBUG)
+
+        # create console handler and set level to debug
+        ch = StreamHandler()
+        ch.setLevel(DEBUG)
+
+        # create formatter
+        formatter = Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s')
+
+        # add formatter to ch
+        ch.setFormatter(formatter)
+
+        # add ch to logger
+        self.logger.addHandler(ch)
 
     def load(self):
         if self._symbol_data:
