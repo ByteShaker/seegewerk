@@ -2,6 +2,7 @@ from os import path
 from logging import getLogger, StreamHandler, Formatter, DEBUG
 
 import pandas as pd
+pd.options.plotting.backend = "plotly"
 from datetime import date, timedelta
 
 from pandas_datareader import data as pdr
