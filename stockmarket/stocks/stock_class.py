@@ -36,7 +36,7 @@ class Stock:
         else:
             self.logger.error('Symbol data does not exist: ' + self._file_path)
 
-        return self._symbol_data is not None
+        return not self._symbol_data.empty
 
     def save(self):
         file_path = './data/' + self._symbol + '.pkl'
