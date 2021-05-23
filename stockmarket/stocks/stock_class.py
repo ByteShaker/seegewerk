@@ -17,22 +17,18 @@ class Stock:
 
         self.logger = getLogger(self._symbol + ' Logger')
         self.logger.setLevel(DEBUG)
-
         # create console handler and set level to debug
         ch = StreamHandler()
         ch.setLevel(DEBUG)
-
         # create formatter
         formatter = Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s')
-
         # add formatter to ch
         ch.setFormatter(formatter)
-
         # add ch to logger
         self.logger.addHandler(ch)
 
     def load(self):
-        if self._symbol_data:
+        if not self._symbol_data.empty:
             self.logger.info('Symbol data is not empty.')
         elif path.isfile(self._file_path):
             self._symbol_data = pd.read_pickle(self._file_path)
