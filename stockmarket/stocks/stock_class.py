@@ -1,5 +1,5 @@
 from os import path
-from logging import getLogger
+from logging import getLogger, INFO
 
 import pandas as pd
 from datetime import date, timedelta
@@ -16,7 +16,7 @@ class Stock:
         self._symbol_data = None
 
         self.logger = getLogger(self._symbol + ' Logger')
-        self.logger.setLevel('INFO')
+        self.logger.setLevel(INFO)
 
     def load(self):
         if self._symbol_data:
