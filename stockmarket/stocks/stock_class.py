@@ -13,7 +13,7 @@ class Stock:
     def __init__(self, symbol):
         self._symbol = symbol
         self._file_path = '../data/' + self._symbol + '.pkl'
-        self._symbol_data = None
+        self._symbol_data = pd.DataFrame()
 
         self.logger = getLogger(self._symbol + ' Logger')
         self.logger.setLevel(DEBUG)
