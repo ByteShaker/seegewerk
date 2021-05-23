@@ -20,7 +20,7 @@ class Stock:
             Logger.info('Symbol data is not empty.')
         elif path.isfile(self._file_path):
             self._symbol_data = pd.read_pickle(self._file_path)
-            Logger.info('Symbol data loaded from pickle file: ' + self._file_path)
+            Logger.info(msg='Symbol data loaded from pickle file: ' + self._file_path)
         else:
             Logger.error('Symbol data does not exist: ' + self._file_path)
 
