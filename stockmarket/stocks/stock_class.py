@@ -52,7 +52,7 @@ class Stock:
         if self.load():
             if self._symbol_data.index[-1] < date.today():
                 self.logger.info('Last day saved: ' + str(self._symbol_data.index[-1]))
-                new_symbol_data = pdr.get_data_yahoo(self._symbol, start=self.symbol_data.index[-1], end=date.today())
+                new_symbol_data = pdr.get_data_yahoo(self._symbol, start=self._symbol_data.index[-1], end=date.today())
                 if not new_symbol_data.empty:
                     try:
                         self._symbol_data = self._symbol_data.append(new_symbol_data[self._symbol_data.index[-1] + timedelta(days=1):], verify_integrity=True)
