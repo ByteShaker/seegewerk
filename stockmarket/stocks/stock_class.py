@@ -1,5 +1,5 @@
 from os import path
-from logging import Logger
+from logging import getLogger
 
 import pandas as pd
 from datetime import date, timedelta
@@ -15,7 +15,7 @@ class Stock:
         self._file_path = '../data/' + self._symbol + '.pkl'
         self._symbol_data = None
 
-        self.logger = Logger(self._symbol + ' Logger')
+        self.logger = getLogger(self._symbol + ' Logger')
         self.logger.setLevel('INFO')
 
     def load(self):
