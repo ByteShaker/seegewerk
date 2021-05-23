@@ -15,7 +15,7 @@ class Stock:
         self._file_path = '../data/' + self._symbol + '.pkl'
         self._symbol_data = None
 
-        self.logger = Logger()
+        self.logger = Logger(self._symbol + ' Logger')
 
     def load(self):
         if self._symbol_data:
